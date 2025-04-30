@@ -54,5 +54,6 @@ This **C++ console application** logs the usage duration of non-Windows applicat
 
 ## Result
 if success, the applog contains data like this
+
 ![applog.txt.png](applog.txt.png)
 
