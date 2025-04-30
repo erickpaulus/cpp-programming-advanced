@@ -52,3 +52,7 @@ This **C++ console application** logs the usage duration of non-Windows applicat
 4. Press **Ctrl+C** to exit.
 5. Check the file at `C:\ProgramData\applog.txt`.
 
+## Result
+if success, the applog contains data like this
+![applog.txt.png](applog.txt.png)
+
