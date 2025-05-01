@@ -27,8 +27,8 @@ This **C++ console application** logs the usage duration of non-Windows applicat
 ## Building the Application
 
 1. Open **Visual Studio**.
-2. Create a new **Console App** project.
-3. Replace the contents of `main.cpp` with the code below.
+2. Create a new **Console App** project with name "AppLoggerService".
+3. Replace the contents of `AppLoggerService.cpp` with the code below.
 4. Build and run.
 
 ---
@@ -53,7 +53,7 @@ This **C++ console application** logs the usage duration of non-Windows applicat
 5. Check the file at `C:\ProgramData\applog.txt`.
 
 ## Result
-if success, the applog contains data like this
+if success, the applog.txt contains data like this
 
 ![applog.txt.png](applog.txt.png)
 
