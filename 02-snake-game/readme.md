@@ -49,10 +49,10 @@ void InitGame() {
 void MoveSnake() {
     Point head = snake.front();
     switch (dir) {
-        case UP: head.y--; break;
-        case DOWN: head.y++; break;
-        case LEFT: head.x--; break;
-        case RIGHT: head.x++; break;
+    case UP: head.y--; break;
+    case DOWN: head.y++; break;
+    case LEFT: head.x--; break;
+    case RIGHT: head.x++; break;
     }
 
     if (head.x < 0 || head.x >= COLUMNS || head.y < 0 || head.y >= ROWS)
@@ -66,7 +66,8 @@ void MoveSnake() {
 
     if (head.x == food.x && head.y == food.y) {
         food = { rand() % COLUMNS, rand() % ROWS };
-    } else {
+    }
+    else {
         snake.pop_back();
     }
 }
@@ -91,34 +92,34 @@ void Draw(HDC hdc) {
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
-        case WM_CREATE:
-            SetTimer(hwnd, 1, 100, NULL);
-            break;
-        case WM_TIMER:
-            if (!gameOver) {
-                MoveSnake();
-                InvalidateRect(hwnd, NULL, TRUE);
-            }
-            break;
-        case WM_KEYDOWN:
-            switch (wParam) {
-                case VK_UP:    if (dir != DOWN)  dir = UP; break;
-                case VK_DOWN:  if (dir != UP)    dir = DOWN; break;
-                case VK_LEFT:  if (dir != RIGHT) dir = LEFT; break;
-                case VK_RIGHT: if (dir != LEFT)  dir = RIGHT; break;
-            }
-            break;
-        case WM_PAINT:
-            {
-                PAINTSTRUCT ps;
-                HDC hdc = BeginPaint(hwnd, &ps);
-                Draw(hdc);
-                EndPaint(hwnd, &ps);
-            }
-            break;
-        case WM_DESTROY:
-            PostQuitMessage(0);
-            break;
+    case WM_CREATE:
+        SetTimer(hwnd, 1, 100, NULL);
+        break;
+    case WM_TIMER:
+        if (!gameOver) {
+            MoveSnake();
+            InvalidateRect(hwnd, NULL, TRUE);
+        }
+        break;
+    case WM_KEYDOWN:
+        switch (wParam) {
+        case VK_UP:    if (dir != DOWN)  dir = UP; break;
+        case VK_DOWN:  if (dir != UP)    dir = DOWN; break;
+        case VK_LEFT:  if (dir != RIGHT) dir = LEFT; break;
+        case VK_RIGHT: if (dir != LEFT)  dir = RIGHT; break;
+        }
+        break;
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hwnd, &ps);
+        Draw(hdc);
+        EndPaint(hwnd, &ps);
+    }
+    break;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
     }
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
@@ -127,7 +128,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, int nCmdShow) {
     srand((unsigned)time(NULL));
     InitGame();
 
-    const char CLASS_NAME[] = "SnakeWinClass";
+    const wchar_t CLASS_NAME[] = L"SnakeWinClass";
+
     WNDCLASS wc = {};
     wc.lpfnWndProc = WndProc;
     wc.hInstance = hInst;
@@ -137,10 +139,11 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, int nCmdShow) {
     RegisterClass(&wc);
 
     HWND hwnd = CreateWindowEx(
-        0, CLASS_NAME, "Snake Game (WinAPI)", WS_OVERLAPPEDWINDOW,
+        0, CLASS_NAME, L"Snake Game (WinAPI)", WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, WIDTH + 16, HEIGHT + 39,
         NULL, NULL, hInst, NULL
     );
+
 
     ShowWindow(hwnd, nCmdShow);
 
@@ -151,6 +154,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, int nCmdShow) {
     }
     return 0;
 }
+
 ```
 5. Build & Run
 - Press Ctrl + F5 to build and run.
