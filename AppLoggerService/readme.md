@@ -57,3 +57,7 @@ if success, the applog contains data like this
 
 ![applog.txt.png](applog.txt.png)
 
+## Next to do
+- run the service in the background
+- Do not write logs in the console
+- Send applog.txt via email when the computer boots
