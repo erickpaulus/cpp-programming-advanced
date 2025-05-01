@@ -1,6 +1,7 @@
 ## cpp-programming-advanced
 
-This repo contains my personal experiments in C++ programming language. Some programs can be applied in personal or idustry case.
+This repo contains my personal experiments with the C++ programming language. Some programs can be applied to personal or industry use cases.
 
 1. App Usage Logger (Console-based)
-2. to be continued ...
+2. Snake Game in C++ using SFML
+3. to be continued ...
