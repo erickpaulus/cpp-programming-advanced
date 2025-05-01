@@ -3,8 +3,8 @@
 ## Requirements
 - A C++ compiler (e.g., `g++`, MSVC, etc.)
 - SFML installed  
-  🔗 [Download SFML](https://www.sfml-dev.org/download.php)
-
+  🔗 Download SFML(https://www.sfml-dev.org/download.php)
+- SFML and Visual Studio instalation (https://www.sfml-dev.org/tutorials/3.0/getting-started/visual-studio/#installing-sfml)
 ## Features
 - Real-time graphics with smooth snake movement
 - Food collection, scoring system, and snake growth
